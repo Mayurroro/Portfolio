@@ -3464,3 +3464,59 @@ section .hero {
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Project detail page - primary CTA
+--------------------------------------------------------------*/
+.portfolio-details .visit-website-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--nav-font);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid var(--accent-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-details .visit-website-btn:hover,
+.portfolio-details .visit-website-btn:focus {
+  background-color: transparent;
+  color: var(--accent-color);
+  outline: none;
+}
+
+.portfolio-details .visit-website-btn:active {
+  transform: translateY(1px);
+}
+
+/* Nested anchor: old markup wrapped an <a> inside a <button class="visit-website-btn">.
+   Neutralise the double styling so both markups look identical. */
+.portfolio-details button.visit-website-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-details button.visit-website-btn a {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--nav-font);
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-details button.visit-website-btn a:hover,
+.portfolio-details button.visit-website-btn a:focus {
+  background-color: transparent;
+  color: var(--accent-color);
+  outline: none;
+}

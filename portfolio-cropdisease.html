@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>DeepCrop Crop Disease Detection | Mayuresh Thorve</title>
+  <meta name="description" content="A custom CNN trained from scratch on the PlantVillage dataset to classify crop diseases, with Grad-CAM visualisation and a Streamlit app. Estimated 98.5% accuracy.">
+  <link rel="canonical" href="https://mayuresh-portfolio.onrender.com/portfolio-cropdisease.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DeepCrop: Crop Disease Identification">
+  <meta property="og:description" content="A custom CNN trained from scratch on PlantVillage, with Grad-CAM heatmaps and treatment recommendations.">
+  <meta property="og:url" content="https://mayuresh-portfolio.onrender.com/portfolio-cropdisease.html">
+  <meta property="og:image" content="https://mayuresh-portfolio.onrender.com/assets/img/portfolio/project-cropdisease.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link href="assets/img/Zoro_fevicon.jpg" rel="icon">
+  <link href="assets/img/zoro-jolly-roger-joaks.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">My PortFolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html#portfolio">Machine Learning Models</a></li>
+            <li class="breadcrumb-item active current">DeepCrop</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>DeepCrop</h1>
+        <p>An AI-based crop disease identification system built as a digital plant doctor.</p>
+      </div><!-- End Page Title -->
+    </div>
+
+    <section class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="project-hero">
+          <div class="hero-content" data-aos="fade-up">
+            <div class="project-category">Machine Learning</div>
+            <h2 class="project-title">DeepCrop</h2>
+            <p class="project-subtitle">A digital plant doctor: point a phone camera at a diseased leaf, get the
+              disease, the confidence, and what to do about it.</p>
+            <a href="https://github.com/Mayurroro/Crop-Disease-Detection" class="visit-website-btn" target="_blank"
+              rel="noopener">View Code</a>
+          </div>
+
+          <div class="project-meta-grid" data-aos="fade-up" data-aos-delay="200">
+            <div class="meta-column">
+              <div class="meta-label">Self-driven project</div>
+              <div class="meta-value">Mayuresh</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Year</div>
+              <div class="meta-value">2026</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Services</div>
+              <div class="meta-value">Computer Vision, Deep Learning</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Accuracy</div>
+              <div class="meta-value">98.5% estimated (F1 0.98)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <div class="project-overview" data-aos="fade-up">
+                <h2>Project Overview</h2>
+                <p class="overview-text">Crop losses to pests and disease run 20–40% a year, and the current answer
+                  is a human expert who may not be in the field that day. DeepCrop is meant to be the first look
+                  instead of the last: a photographer uploads a leaf image and gets back the disease, a confidence
+                  score, and a treatment recommendation. The model is a custom CNN built from scratch — four
+                  convolutional blocks with batch normalisation and dropout — trained by supervised learning on the
+                  PlantVillage dataset. The design choice that mattered most was adding Grad-CAM, which overlays a
+                  heatmap of the regions the network actually used, so a farmer can see the model is looking at the
+                  lesion and not at the soil in the background.</p>
+
+                <div class="challenge-solution">
+                  <div class="challenge-block" data-aos="fade-up" data-aos-delay="100">
+                    <h3>The Challenge</h3>
+                    <p>Accuracy on a clean dataset says very little about field performance. PlantVillage images are
+                      tidy and evenly lit, while a real phone photo is angled, shadowed, and full of distractions. A
+                      model can score well on the benchmark and still be unusable on the crop it is meant to judge.</p>
+                  </div>
+
+                  <div class="solution-block" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Our Approach</h3>
+                    <p>Train a custom CNN with aggressive augmentation, and make the output legible rather than
+                      just numeric. Grad-CAM forces the model to show its evidence, confidence scoring tells the user
+                      how much to trust it, and treatment recommendations turn a label into something actionable.
+                      The whole pipeline ships as a Streamlit app with sub-100ms inference.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="technology-stack" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-3">
+              <h3>Technology Stack</h3>
+            </div>
+            <div class="col-lg-9">
+              <div class="tech-categories">
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="150">
+                  <div class="category-title">Model</div>
+                  <div class="tech-list">
+                    <span class="tech-item">PyTorch</span>
+                    <span class="tech-item">Custom CNN</span>
+                    <span class="tech-item">BatchNorm / Dropout</span>
+                    <span class="tech-item">Grad-CAM</span>
+                  </div>
+                </div>
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+                  <div class="category-title">Data</div>
+                  <div class="tech-list">
+                    <span class="tech-item">PlantVillage Dataset</span>
+                    <span class="tech-item">Augmentation</span>
+                    <span class="tech-item">PyTorch DataLoader</span>
+                  </div>
+                </div>
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="250">
+                  <div class="category-title">App</div>
+                  <div class="tech-list">
+                    <span class="tech-item">Streamlit</span>
+                    <span class="tech-item">Jupyter Notebook</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="key-features-section" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="features-intro">
+                <h3>Key Features</h3>
+                <p>Built so a non-technical user can act on the result without second-guessing it.</p>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="features-list">
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-flower1"></i></div>
+                  <div class="feature-content">
+                    <h4>Multi-crop classification</h4>
+                    <p>Eight-plus disease classes spanning tomato, potato, pepper and more, trained on PlantVillage.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-thermometer-sun"></i></div>
+                  <div class="feature-content">
+                    <h4>Grad-CAM visualisation</h4>
+                    <p>A heatmap over the image showing exactly which pixels drove the decision, so a wrong
+                      prediction is visible rather than mysterious.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+                  <div class="feature-content">
+                    <h4>Confidence scoring</h4>
+                    <p>Every prediction reports how sure the model is, letting the app say "unclear, try a closer
+                      photo" instead of guessing.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-journal-medical"></i></div>
+                  <div class="feature-content">
+                    <h4>Treatment recommendations</h4>
+                    <p>The output is advice, not just a label — each disease class maps to an action the farmer can
+                      take the same day.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
+                  <div class="feature-content">
+                    <h4>Sub-100ms inference</h4>
+                    <p>Fast enough for an interactive upload-and-result loop in the Streamlit app.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Portfolio Details Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/Mayurroro"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/mayuresh348/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/mayuresh-thorve-762656309"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RP12611H8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5RP12611H8');
+  </script>
+
+</body>
+
+</html>

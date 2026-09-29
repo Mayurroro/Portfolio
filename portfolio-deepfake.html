@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Deepfake Live Detector | Mayuresh Thorve</title>
+  <meta name="description" content="Real-time AI deepfake detection for images and audio, built with EfficientNet-B4, CNN-LSTM and gated mixture-of-experts fusion. FastAPI, Streamlit and Docker.">
+  <link rel="canonical" href="https://mayuresh-portfolio.onrender.com/portfolio-deepfake.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Deepfake Live Detector">
+  <meta property="og:description" content="Real-time image and audio deepfake detection with a 10-stage forensic pipeline and explainable flags.">
+  <meta property="og:url" content="https://mayuresh-portfolio.onrender.com/portfolio-deepfake.html">
+  <meta property="og:image" content="https://mayuresh-portfolio.onrender.com/assets/img/portfolio/project-deepfake.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link href="assets/img/Zoro_fevicon.jpg" rel="icon">
+  <link href="assets/img/zoro-jolly-roger-joaks.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">My PortFolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html#portfolio">Machine Learning Models</a></li>
+            <li class="breadcrumb-item active current">Deepfake Live Detector</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Deepfake Live Detector</h1>
+        <p>Real-time AI detection of synthetic images and audio from a live webcam or microphone.</p>
+      </div><!-- End Page Title -->
+    </div>
+
+    <section class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="project-hero">
+          <div class="hero-content" data-aos="fade-up">
+            <div class="project-category">Machine Learning</div>
+            <h2 class="project-title">Deepfake Live Detector</h2>
+            <p class="project-subtitle">Real-time AI-powered deepfake detection for images and audio, with live
+              webcam and microphone capture.</p>
+            <a href="https://github.com/Mayurroro/DeepFake" class="visit-website-btn" target="_blank"
+              rel="noopener">View Code</a>
+          </div>
+
+          <div class="project-meta-grid" data-aos="fade-up" data-aos-delay="200">
+            <div class="meta-column">
+              <div class="meta-label">Self-driven project</div>
+              <div class="meta-value">Mayuresh</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Year</div>
+              <div class="meta-value">2026</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Services</div>
+              <div class="meta-value">Computer Vision, Audio ML</div>
+            </div>
+            <div class="meta-column">
+              <div class="meta-label">Models</div>
+              <div class="meta-value">EfficientNet-B4, CNN-LSTM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <div class="project-overview" data-aos="fade-up">
+                <h2>Project Overview</h2>
+                <p class="overview-text">Synthetic media is cheap to generate and expensive to catch by eye, so this
+                  project treats detection as a measurement problem rather than a single-model guess. An
+                  EfficientNet-B4 backbone scores images and a CNN-LSTM over Mel-spectrograms scores audio, and a
+                  gated mixture-of-experts layer fuses the two into a single verdict. Around that sit a 10-stage
+                  forensic pipeline, a FastAPI service, a Streamlit dashboard for camera, microphone and upload, and
+                  concurrent batch scanning.</p>
+
+                <div class="challenge-solution">
+                  <div class="challenge-block" data-aos="fade-up" data-aos-delay="100">
+                    <h3>The Challenge</h3>
+                    <p>A single classifier gives a number with no explanation, which is useless when the answer is
+                      going to a person deciding whether to trust a clip. Image and audio forgeries also leave
+                      different traces, and a model good at one is often poor at the other.</p>
+                  </div>
+
+                  <div class="solution-block" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Our Approach</h3>
+                    <p>Two specialised models, one fusion layer, and ten classical forensic stages that run first:
+                      file inspection, provenance, EXIF metadata, quality, and spectral analysis. When something is
+                      flagged the system reports the measured features behind the decision — FFT frequency
+                      distribution, edge sharpness, texture uniformity, spectral centroid and rolloff — rather than
+                      a bare score.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="technology-stack" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-3">
+              <h3>Technology Stack</h3>
+            </div>
+            <div class="col-lg-9">
+              <div class="tech-categories">
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="150">
+                  <div class="category-title">Models</div>
+                  <div class="tech-list">
+                    <span class="tech-item">EfficientNet-B4</span>
+                    <span class="tech-item">CNN-LSTM</span>
+                    <span class="tech-item">Mixture of Experts</span>
+                    <span class="tech-item">FFT / Mel-spectrogram</span>
+                  </div>
+                </div>
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+                  <div class="category-title">Engineering</div>
+                  <div class="tech-list">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">PyTorch</span>
+                    <span class="tech-item">OpenCV</span>
+                    <span class="tech-item">ONNX</span>
+                  </div>
+                </div>
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="250">
+                  <div class="category-title">Serving</div>
+                  <div class="tech-list">
+                    <span class="tech-item">FastAPI</span>
+                    <span class="tech-item">Streamlit</span>
+                    <span class="tech-item">Docker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="key-features-section" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="features-intro">
+                <h3>Key Features</h3>
+                <p>Detection that is live, dual-modal, and willing to show its working.</p>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="features-list">
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-camera-video"></i></div>
+                  <div class="feature-content">
+                    <h4>Live capture</h4>
+                    <p>Thread-safe OpenCV camera capture and a rolling-buffer microphone stream, so detection runs on
+                      content as it happens rather than on an upload.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-soundwave"></i></div>
+                  <div class="feature-content">
+                    <h4>Dual-modal detection</h4>
+                    <p>Separate image and audio detectors, fused by a gated mixture-of-experts layer that weighs
+                      each signal by how much it should be trusted.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                  <div class="feature-content">
+                    <h4>10-stage forensic pipeline</h4>
+                    <p>File inspection, provenance, EXIF metadata, quality, and classical signal analysis run
+                      alongside the neural models to catch what a model alone would miss.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-card-text"></i></div>
+                  <div class="feature-content">
+                    <h4>Explainable results</h4>
+                    <p>Every flag comes with the measurements behind it — spectral centroid, MFCC formants, zero
+                      crossings, edge sharpness — so a verdict can be checked instead of trusted.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-hdd-network"></i></div>
+                  <div class="feature-content">
+                    <h4>Batch and API modes</h4>
+                    <p>A concurrent batch processor scans whole directories, and a FastAPI service exposes the same
+                      pipeline over <code>/detect</code> and <code>/health</code>.</p>
+                  </div>
+                </div>
+                <div class="feature-row">
+                  <div class="feature-icon"><i class="bi bi-box"></i></div>
+                  <div class="feature-content">
+                    <h4>Portable weights</h4>
+                    <p>One-command ONNX export moves the trained models off PyTorch and onto lighter runtimes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Portfolio Details Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/Mayurroro"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/mayuresh348/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/mayuresh-thorve-762656309"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RP12611H8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5RP12611H8');
+  </script>
+
+</body>
+
+</html>
